@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserserviceService } from '../services/userservice.service';
-import { SigninComponent } from '../signin/signin.component';
-import { HostListener } from '@angular/core';
 
 
-declare var Razorpay: any;
 
 @Component({
   selector: 'app-checkout',

@@ -18,6 +18,7 @@ export class UserserviceService {
   get nativeWindow(): any {
     return _window();
   }
+  Domain = "https://mevamart.onrender.com/";
 Url = 'http://localhost:3000';
 backendhost='http://localhost:3000/';
 myorder='http://localhost:3000/myorder';
