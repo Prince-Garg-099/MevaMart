@@ -1,0 +1,343 @@
+
+<app-navbar></app-navbar>
+
+<header>
+    <!-- Heading -->
+    <div class="bg-success  ">
+      <div class="container py-4">
+        <nav class="d-flex">
+          <h6 class="mb-0">
+            <a routerLink="" class="text-white-50">Home</a>
+            <span class="text-white-50 mx-2"> > </span>
+            <a routerLink="/cart" class="text-white-50">2. Shopping cart</a>
+            <span class="text-white-50 mx-2"> > </span>
+            <a routerLink="/checkout" class="text-white"><u>3. Order info</u></a>
+            <span class="text-white-50 mx-2"> > </span>
+            <a routerLink="/payment" class="text-white-50">4. Payment</a>
+          </h6>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <!-- <section class="bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-8 col-lg-8 mb-4">
+          <div class="card mb-4 border shadow-0">
+            <div class="p-4 d-flex justify-content-between">
+              <div class="">
+                <h5>Have an account?</h5>
+                <p class="mb-0 text-wrap ">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+              </div>
+              <div class="d-flex align-items-center justify-content-center flex-column flex-md-row">
+                <a href="#" class="btn btn-outline-primary me-0 me-md-2 mb-2 mb-md-0 w-100">Register</a>
+                <a href="#" class="btn btn-primary shadow-0 text-nowrap w-100">Sign in</a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="card shadow-0 border">
+            <div class="p-4">
+              <h5 class="card-title mb-3">Guest checkout</h5>
+              <div class="row">
+                <div class="col-6 mb-3">
+                  <p class="mb-0">First name</p>
+                  <div class="form-outline">
+                    <input type="text" id="typeText" placeholder="Type here" class="form-control" />
+                  </div>
+                </div>
+  
+                <div class="col-6">
+                  <p class="mb-0">Last name</p>
+                  <div class="form-outline">
+                    <input type="text" id="typeText" placeholder="Type here" class="form-control" />
+                  </div>
+                </div>
+  
+                <div class="col-6 mb-3">
+                  <p class="mb-0">Phone</p>
+                  <div class="form-outline">
+                    <input type="tel" id="typePhone" value="+48 " class="form-control" />
+                  </div>
+                </div>
+  
+                <div class="col-6 mb-3">
+                  <p class="mb-0">Email</p>
+                  <div class="form-outline">
+                    <input type="email" id="typeEmail" placeholder="example@gmail.com" class="form-control" />
+                  </div>
+                </div>
+              </div>
+  
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                <label class="form-check-label" for="flexCheckDefault">Keep me up to date on news</label>
+              </div>
+  
+              <hr class="my-4" />
+  
+              <h5 class="card-title mb-3">Shipping info</h5>
+  
+              <div class="row mb-3">
+                <div class="col-lg-4 mb-3">
+                  <div class="form-check h-100 border rounded-3">
+                    <div class="p-3">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Express delivery <br />
+                        <small class="text-muted">3-4 days via Fedex </small>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 mb-3">
+                  <div class="form-check h-100 border rounded-3">
+                    <div class="p-3">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Post office <br />
+                        <small class="text-muted">20-30 days via post </small>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 mb-3">
+                  <div class="form-check h-100 border rounded-3">
+                    <div class="p-3">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" />
+                      <label class="form-check-label" for="flexRadioDefault3">
+                        Self pick-up <br />
+                        <small class="text-muted">Come to our shop </small>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-sm-8 mb-3">
+                  <p class="mb-0">Address</p>
+                  <div class="form-outline">
+                    <input type="text" id="typeText" placeholder="Type here" class="form-control" />
+                  </div>
+                </div>
+  
+                <div class="col-sm-4 mb-3">
+                  <p class="mb-0">City</p>
+                  <select class="form-select">
+                    <option value="1">New York</option>
+                    <option value="2">Moscow</option>
+                    <option value="3">Samarqand</option>
+                  </select>
+                </div>
+  
+                <div class="col-sm-4 mb-3">
+                  <p class="mb-0">House</p>
+                  <div class="form-outline">
+                    <input type="text" id="typeText" placeholder="Type here" class="form-control" />
+                  </div>
+                </div>
+  
+                <div class="col-sm-4 col-6 mb-3">
+                  <p class="mb-0">Postal code</p>
+                  <div class="form-outline">
+                    <input type="text" id="typeText" class="form-control" />
+                  </div>
+                </div>
+  
+                <div class="col-sm-4 col-6 mb-3">
+                  <p class="mb-0">Zip</p>
+                  <div class="form-outline">
+                    <input type="text" id="typeText" class="form-control" />
+                  </div>
+                </div>
+              </div>
+  
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" />
+                <label class="form-check-label" for="flexCheckDefault1">Save this address</label>
+              </div>
+  
+              <div class="mb-3">
+                <p class="mb-0">Message to seller</p>
+                <div class="form-outline">
+                  <textarea class="form-control" id="textAreaExample1" rows="2"></textarea>
+                </div>
+              </div>
+  
+              <div class="float-end">
+                <button class="btn btn-light btn-lg border">Cancel</button> &nbsp;
+                <button routerLink="/payment" class="btn btn-success btn-lg shadow-0 border">Pay $195.90 </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 d-flex justify-content-center justify-content-lg-end">
+          <div class="ms-lg-4 mt-4 mt-lg-0" style="max-width: 320px;">
+            <h6 class="mb-3">Summary</h6>
+            <div class="d-flex justify-content-between">
+              <p class="mb-2">Total price:</p>
+              <p class="mb-2">$195.90</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="mb-2">Discount:</p>
+              <p class="mb-2 text-danger">- $60.00</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="mb-2">Shipping cost:</p>
+              <p class="mb-2">+ $14.00</p>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between">
+              <p class="mb-2">Total price:</p>
+              <p class="mb-2 fw-bold">$149.90</p>
+            </div>
+  
+            <div class="input-group mt-3 mb-4">
+              <input type="text" class="form-control border" name="" placeholder="Promo code" />
+              <button class="btn btn-light text-primary border">Apply</button>
+            </div>
+  
+            <hr />
+            <h6 class="text-dark my-4">Items in cart</h6>
+  
+            <div class="d-flex align-items-center mb-4">
+              <div class="me-3 position-relative">
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-secondary">
+                  1
+                </span>
+                <img src="../../../assets/cd_1.png" style="height: 96px; width: 96x;" class="img-sm rounded border" />
+              </div>
+              <div class="">
+                <a href="#" class="nav-link">
+                    Kashmiri Almonds
+                </a>
+                <div class="price text-muted">Total: $295.99</div>
+              </div>
+            </div>
+  
+            <div class="d-flex align-items-center mb-4">
+              <div class="me-3 position-relative">
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-secondary">
+                  1
+                </span>
+                <img src="../../../assets/cd_3.png" style="height: 96px; width: 96x;" class="img-sm rounded border" />
+              </div>
+              <div class="">
+                <a href="#" class="nav-link">
+                    Kashmiri Almonds <br />
+                </a>
+                <div class="price text-muted">Total: $217.99</div>
+              </div>
+            </div>
+  
+            <div class="d-flex align-items-center mb-4">
+              <div class="me-3 position-relative">
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-secondary">
+                  3
+                </span>
+                <img src="../../../assets/cd_5.png" style="height: 96px; width: 96x;" class="img-sm rounded border" />
+              </div>
+              <div class="">
+                <a href="#" class="nav-link">Kashmiri Almonds</a>
+                <div class="price text-muted">Total: $910.00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  
+
+  
+  <!-- Footer -->
+
+  <!-- Footer -->
+
+<div class=" mb-2 mt-2 ">
+<div class=" m-auto col-10  border">
+        <h5 type="button" class="well well-lg card card-block card-header my-2 " style="background-color: rgb(0, 56, 226);color: white; " 
+        [attr.aria-expanded]="isCollapsed" aria-controls="collapseBasic" > Step 1:   Add Delivery Address</h5>
+  <div id="collapseBasic" [collapse]="!isCollapsed" [isAnimated]="true">
+  <div id="collapseBasic" >
+    <form [formGroup]="delForm">
+        <div class="form-group row gx-1 ">
+          <input formControlName="name" style="border-radius: 0px;"  type="text" class="form-control my-2 col mx-2   " id="exampleInputEmail1"  placeholder="Name">
+          <input formControlName="phoneno" style="border-radius: 0px;"type="text" class="form-control my-2 col mx-2 " id="exampleInputPassword1" placeholder="10-digit mobile number">
+        </div>
+        <div class="form-group row gx-1 ">
+            <input formControlName="pincode" style="border-radius: 0px;" type="text" class="form-control my-2 col mx-2   " id="exampleInputEmail1"  placeholder="Pin code">
+            <input formControlName="locality" style="border-radius: 0px;"type="text" class="form-control my-2 col mx-2 " id="exampleInputPassword1" placeholder="Locality">
+        </div>
+        <div class="form-group row gx-1">
+            <textarea formControlName="address" style="border-radius: 0px;" type="textarea" class="form-control my-2 col mx-2   " id="exampleInputEmail1"  placeholder="Address (Area and Street)"></textarea>
+        </div>
+        <div class="form-group row gx-1 ">
+            <input formControlName="city" style="border-radius: 0px;  " type="text" class="form-control my-2 col mx-2   " id="exampleInputEmail1"  placeholder="City/District/Town">
+            <select formControlName="state" class=" select my-2 col mx-2 " style="border-color: rgb(216, 216, 216);" name="state" placeholder="State"  required="" >
+                <option value="" disabled="" selected  >--Select State--</option>
+                <option value="Andaman &amp; Nicobar Islands">Andaman &amp; Nicobar Islands</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Dadra &amp; Nagar Haveli &amp; Daman &amp; Diu">Dadra &amp; Nagar Haveli &amp; Daman &amp; Diu</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jammu &amp; Kashmir">Jammu &amp; Kashmir</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Ladakh">Ladakh</option>
+                <option value="Lakshadweep">Lakshadweep</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Puducherry">Puducherry</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="West Bengal">West Bengal</option>
+            </select> 
+          </div>
+        <div>
+            <button (click)="onSave()"  type="submit" class="btn btn-warning  mx-4 my-2  "  style="color: white;" > <b> SAVE</b></button>
+            <button class="btn border " [routerLink]="['/app-cart']"  >CANCEL</button>
+        </div> 
+    </form>
+  </div>
+</div>
+<div type="button" class=" col-12 m-auto well well-lg card card-block card-header"style="background-color: rgb(0, 56, 226);color: white; " 
+><b> Step 2 : PAYMENT OPTIONS</b>
+</div>
+<div class="col-10 m-auto  " id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
+<div class="col-10 m-auto  " id="collapseBasic" >
+<button class=" ms-5 mt-2  m-auto  col-8 btn btn-primary mb-2 " [routerLink]="['/myorders']"  (click)="pay()" > <b> ₹ {{total}}</b>  Pay with <i> <b>Razorpay</b> </i>  </button>
+<button class=" ms-5 col-8 mt-2 btn  border  btn-white mb-2 "[routerLink]="['/myorders']" style="font-family: Arial, Helvetica, sans-serif;"  (click)="cod()"  > <img style="height: 30px;" src="data:image/png" >  Cash on Delivery  
+</button>
+</div>
+</div>
+</div>
+</div>
+
+    
+    <app-footer></app-footer>
+
+
+    

@@ -1,0 +1,69 @@
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #f5f5f5
+}
+
+.hedding {
+  font-size: 20px;
+  color: #ab8181;
+}
+
+.main-section {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, 5%);
+}
+
+.left-side-product-box img {
+  width: 100%;
+}
+
+.left-side-product-box .sub-img img {
+  margin-top: 5px;
+  width: 83px;
+  height: 100px;
+}
+
+.right-side-pro-detail span {
+  font-size: 15px;
+}
+
+.right-side-pro-detail p {
+  font-size: 25px;
+  color: #a1a1a1;
+}
+
+.btn-danger {
+  background: #fc0a0a;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ffccc7, #e90000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ff2200, #ff7c7c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+  border: 3px solid #eee;
+}
+.btn-success {
+  background: #50f25d;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #00ff7b, #7f7ff7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #00b3ff, #989ffe); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+  border: 3px solid #eee;
+}
+.right-side-pro-detail .price-pro {
+  color: #E45641;
+}
+
+.right-side-pro-detail .tag-section {
+  font-size: 18px;
+  color: #5D4C46;
+}
+
+.pro-box-section .pro-box img {
+  width: 100%;
+  height: 200px;
+}
+
+@media (min-width:360px) and (max-width:640px) {
+  .pro-box-section .pro-box img {
+      height: auto;
+  }
+}

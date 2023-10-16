@@ -1,0 +1,8 @@
+.btn-success {
+    background: #ecfc0a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #166c03, #e7c51b);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #5ee02f, #54ed12); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #ff0000;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border: 3px solid #eee;
+  }

@@ -1,0 +1,161 @@
+<app-navbar  ></app-navbar>
+<!-- <div *ngIf="getCartDetails.length" class=" ms-3 mt-1 ">
+  <div class=" col-sm-8    ">
+    <div style=" height:50px;">
+      <h5 class="ms-2 mt-2" style="justify-content: center;"><i style="font-size: 20px;"
+          class="fa fa-shopping-cart"></i> My Cart ({{getCartDetails.length}})</h5>
+    </div>
+
+    <div>
+      <div *ngFor="let getCartDetail of getCartDetails" style=" height:230px;" class="row col-sm-12 mb-5 ">
+        <div class="col-3 " style=" padding-top: 25px;padding-left: 15px; width: 150px; ">
+          <img style="height: 100px; " src="../../../assets/almonds/mamra.png" alt="">
+          <div>
+            <button class="btn border mt-4" style="border-radius: 50%;  "
+              (click)="decQnt(getCartDetail._id , getCartDetail.qnt )"><i class="fa fa-minus"
+                aria-hidden="true"></i></button>
+            <span class="btn border mt-4 "><b>{{getCartDetail.qnt}}</b></span>
+            <button class="btn border mt-4" style="border-radius: 50%;"
+              (click)="incQnt(getCartDetail._id , getCartDetail.qnt )"><i class="fa fa-plus"
+                aria-hidden="true"></i></button>
+          </div>
+        </div>
+        <div class="col-3">
+          <a>
+            <h5 style="padding-top: 25px;">{{getCartDetail.prodname}}</h5>
+          </a>
+          <p>Seller : {{getCartDetail.prodseller}}</p>
+          <h4>₹{{getCartDetail.prodsellprice*getCartDetail.qnt}}</h4>
+          <h6 style="color: green; font-family: cursive; "><del> MRP: ₹{{getCartDetail.prodmrp}}</del> </h6>
+
+        </div>
+        <div class="col-3 ms-2 " style="padding-top: 25px;  height: 230px; "><i style="color: red;"
+            class="fa fa-shipping-fat"></i> Delivery in 2 days <p style="color: green;"> Free <del>₹40</del> </p>
+          <small> <b style=" color: gray;">7 Days Replacement Policy</b> </small> <br><br>
+          <a class="sremove " (click)="singleDelete(getCartDetail._id)"><b>REMOVE</b></a>
+        </div><br>
+        <hr>
+      </div>
+
+    </div>
+
+    <div class=" m-auto" style=" color: white;  height:70px;">
+      <button [routerLink]="['/app-checkout']" class="  col-11 btn btn-danger btn-lg ms-2 mt-3 "
+        style="  color: white;"><b>PLACE ORDER</b> </button>
+    </div>
+  </div>
+  <div class="col-sm-12 ms-5 mt-2  " style=" font-size: 20px; height: 200px; ">
+    <div style="color: red;"> <b>Price Details</b>
+    </div>
+    <div><b>
+        Price({{getCartDetails.length}} items ) : <span>₹{{total}}/-</span></b>
+    </div>
+    <div style="color:green">
+      Total savings = ₹{{this.totalsave}}/-
+
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!getCartDetails.length" class=" mb-4 col-sm-4 container m-auto mt-5 ">
+  <img style="height: 250px; "
+    src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90"
+    alt="">
+  <h4 style="margin-left: 50px;">opps!! Your cart is empty </h4>
+  <button class="btn btn-warning ms-2 col-9 " [routerLink]="['/app-home']"><i style="font-size: 20px;  "
+      class="fa fa-shopping-cart"></i><b> Shop Now </b> </button>
+
+</div> -->
+
+<section class=" h-custom" style="background-color: #d2c9ff;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12">
+        <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+          <div class="card-body p-0">
+            <div class="row g-0">
+              <div class="col-lg-12">
+                <div class="p-5">
+                  <div class="d-flex justify-content-between align-items-center mb-5">
+                    <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
+                    <h6 class="mb-0 text-muted">{{getCartDetails.length}}</h6>
+                  </div>
+                  <hr class="my-4">
+
+                  <div *ngFor="let getCartDetail of getCartDetails" class=" mb-4 col-12 d-flex justify-content-between align-items-center">
+                    <div class="col-md-2  col-lg-2 col-xl-2">
+                      <img style="height:200px"
+                        src="../../../assets/almonds/californian.png"
+                        class="img-fluid rounded-3" alt="Img loading...">
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2">
+                      <h6 class="text-muted">{{getCartDetail.category}}</h6>
+                      <h6 class="text-black mb-0">{{getCartDetail.name}}</h6>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                      <button class="btn btn-link px-2"
+                      (click)="decQnt(getCartDetail._id , getCartDetail.qnt )">
+                        <i class="fa fa-minus"></i>
+                      </button>
+
+                      <span class="btn border "><b>{{getCartDetail.qnt}} kg</b></span>
+
+
+                      <button class="btn btn-link "
+                      (click)="incQnt(getCartDetail._id , getCartDetail.qnt )">
+                        <i class="fa fa-plus"></i>
+                      </button>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                      <h6 class="mb-0 text-decoration-line-through"> MRP:  ₹ {{getCartDetail.mrp}}</h6>
+                      <h6 class="mb-0 text-success"> Discount:  ₹ {{getCartDetail.discount}}%</h6>
+                      <h6 class="mb-0"> Offer Price: ₹ {{getCartDetail.mrp - getCartDetail.discount*getCartDetail.mrp/100}}/kg</h6>
+                    </div>
+                    <div (click)="singleDelete(getCartDetail._id)" class="col-md-1 col-lg-1 col-xl-1 text-end">
+                      <a href="#!" class="text-danger"><i class="fa"></i>REMOVE</a>
+
+                    </div>
+                    <hr class="my-4">
+                  </div>
+
+
+                  <div class="pt-5">
+                    <h6 class="mb-0"><a  href="#!" class=" btn btn-success text-body"><i
+                          class="fa  fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="   container " style=" color: white;  height:70px;">
+    <button [routerLink]="['/checkout']" class="   col-8 btn btn-danger btn-lg ms-2 mt-3 "
+      style="  color: white;"><b>PLACE ORDER</b> </button>
+  </div>
+<div class="col-sm-8  mt-2  " style=" font-size: 20px; height: 200px; ">
+  <div style="color: red;"> <b>Price Details</b>
+  </div>
+  <div><b>
+      Price({{getCartDetails.length}} items ) : <span>₹{{total}}/-</span></b>
+  </div>
+  <div style="color:green">
+    Total savings = ₹{{this.totalsave}}/-
+
+  </div>
+  </div>  </div>
+
+</section>
+
+<div *ngIf="!getCartDetails.length" class=" mb-4 col-sm-4 container m-auto mt-5 ">
+  <img style="height: 250px; "
+    src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90"
+    alt="">
+  <h4 style="margin-left: 50px;">opps!! Your cart is empty </h4>
+  <button class="btn btn-warning ms-2 col-9 " [routerLink]="['/app-home']"><i style="font-size: 20px;  "
+      class="fa fa-shopping-cart"></i><b> Shop Now </b> </button>
+
+</div>
+<app-footer></app-footer>

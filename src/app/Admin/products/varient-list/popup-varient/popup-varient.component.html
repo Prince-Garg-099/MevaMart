@@ -1,0 +1,139 @@
+<!-- <div class="modal fade in" id="AddVariantModal">
+    <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Product By category
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form [formGroup]="variantForm" (ngSubmit)="submitVariant()">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label>Variant Title</label>
+                                                <input class="form-control" formControlName="variant_title">
+                                                <ng-container *ngIf="variantForm.get('variant_title')?.touched || variantFormSubmited">
+                                                    <small class="form-text text-danger" 
+                                                        *ngFor="let errorMsg of variantForm.controls['variant_title'].errors | keyvalue">
+                                                        {{help.errorToString("Variant title", errorMsg.key, errorMsg.value)}}
+                                                    </small>
+                                                </ng-container>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <div class="form-group">
+                                                <label>MRP</label>
+                                                <input class="form-control" formControlName="mrp">
+                                                <ng-container *ngIf="variantForm.get('mrp')?.touched || variantFormSubmited">
+                                                    <small class="form-text text-danger" 
+                                                        *ngFor="let errorMsg of variantForm.controls['mrp'].errors | keyvalue">
+                                                        {{help.errorToString("MRP", errorMsg.key, errorMsg.value)}}
+                                                    </small>
+                                                </ng-container>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div class="form-group">
+                                                <label>Buy Price</label>
+                                                <input class="form-control" formControlName="buy_price">
+                                                <ng-container *ngIf="variantForm.get('buy_price')?.touched || variantFormSubmited">
+                                                    <small class="form-text text-danger" 
+                                                        *ngFor="let errorMsg of variantForm.controls['buy_price'].errors | keyvalue">
+                                                        {{help.errorToString("Buy price", errorMsg.key, errorMsg.value)}}
+                                                    </small>
+                                                </ng-container>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div class="form-group">
+                                                <label>Sell Price</label>
+                                                <input class="form-control" formControlName="sell_price">
+                                                <ng-container *ngIf="variantForm.get('sell_price')?.touched || variantFormSubmited">
+                                                    <small class="form-text text-danger" 
+                                                        *ngFor="let errorMsg of variantForm.controls['sell_price'].errors | keyvalue">
+                                                        {{help.errorToString("Sell price", errorMsg.key, errorMsg.value)}}
+                                                    </small>
+                                                </ng-container>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label>Discount Title</label>
+                                                <input class="form-control" formControlName="discount_title">
+                                                <ng-container *ngIf="variantForm.get('discount_title')?.touched || variantFormSubmited">
+                                                    <small class="form-text text-danger" 
+                                                        *ngFor="let errorMsg of variantForm.controls['discount_title'].errors | keyvalue">
+                                                        {{help.errorToString("Discount title", errorMsg.key, errorMsg.value)}}
+                                                    </small>
+                                                </ng-container>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <div class="form-group">
+                                                <label>Best Price Item No</label>
+                                                <input class="form-control" formControlName="best_price_item_no">
+                                                <ng-container *ngIf="variantForm.get('best_price_item_no')?.touched || variantFormSubmited">
+                                                    <small class="form-text text-danger" 
+                                                        *ngFor="let errorMsg of variantForm.controls['best_price_item_no'].errors | keyvalue">
+                                                        {{help.errorToString("Best Price item number", errorMsg.key, errorMsg.value)}}
+                                                    </small>
+                                                </ng-container>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div class="form-group">
+                                                <label>Barcode</label>
+                                                <input class="form-control" formControlName="barcode">
+                                                <ng-container *ngIf="variantForm.get('barcode')?.touched || variantFormSubmited">
+                                                    <small class="form-text text-danger" 
+                                                        *ngFor="let errorMsg of variantForm.controls['barcode'].errors | keyvalue">
+                                                        {{help.errorToString("Barcode", errorMsg.key, errorMsg.value)}}
+                                                    </small>
+                                                </ng-container>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div class="form-group">
+                                                <label>Stock</label>
+                                                <input class="form-control" formControlName="stock">
+                                                <ng-container *ngIf="variantForm.get('stock')?.touched || variantFormSubmited">
+                                                    <small class="form-text text-danger" 
+                                                        *ngFor="let errorMsg of variantForm.controls['stock'].errors | keyvalue">
+                                                        {{help.errorToString("Stock", errorMsg.key, errorMsg.value)}}
+                                                    </small>
+                                                </ng-container>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label>Image</label>
+    <img [src]="filePreviewUrl" on-error-src="apis.cdnUrl+'assets/images/no_image/product.jpg'" style="width:100px;">
+    <input type="file" (change)="onFileChange($event)" class="btn btn-default" />
+                                                <p class="help-block alert-danger" ng-bind-html="variant.error.image"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" type="submit">OK</button>
+                                    <button class="btn btn-warning" type="button" data-dismiss="modal">Cancel</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div> -->

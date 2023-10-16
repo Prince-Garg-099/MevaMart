@@ -18,6 +18,10 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "ngx-bootstrap": "^10.2.0",
+    "ngx-modal-bootstrap": "^1.0.1",
+    "ngx-toastr": "^17.0.2",
+    "postcss-import": "^15.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

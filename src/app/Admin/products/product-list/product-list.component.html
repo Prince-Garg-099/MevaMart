@@ -1,0 +1,192 @@
+<nav class="navbar bg-light mb-0 sticky-top ">
+    <div class="container">
+        <span class="navbar-brand mb-0 h1">Admin</span>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li>
+                        <a routerLink="/admin/orders" class="nav-link text-white px-0 align-middle">
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
+                    </li>
+                    <li>
+                        <a routerLink="/admin/products" data-bs-toggle="collapse" class="nav-link text-white px-0 align-middle">
+                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
+
+                    </li>
+                    <li>
+                        <a routerLink="/admin/customers" class="nav-link   text-white px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
+                    </li>
+                </ul>
+                <hr>
+                <div class="dropdown pb-4">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                        id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30"
+                            class="rounded-circle">
+                        <span class="d-none d-sm-inline mx-1">prince</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col py-3">
+
+            <div class="container">
+                <h5 class="text-center  " > Total Products: ({{TotalProd}})</h5>
+                <button (click)="openModal(template)" class="btn btn-dark btn-sm mb-2 "> +Add Product</button>
+                <ng-template #template>
+
+
+                    <div class="modal-header">
+                        <h4 class="modal-title pull-left">Add Product Details</h4>
+                        <button type="button" class="btn-close close pull-right" aria-label="Close"
+                            (click)="modalRef?.hide()">
+                            <span aria-hidden="true" class="visually-hidden">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form [formGroup]="productForm" enctype="multipart/form-data">
+                            <div class="form-group row gx-1">
+                                <input formControlName="name" style="border-radius: 0px;" type="text"
+                                    class="form-control my-2 col mx-2" id="exampleInputEmail1"
+                                    placeholder="Product Title">
+                            </div>
+                            <div class="form-group row gx-1">
+                                <input formControlName="mrp" style="border-radius: 0px;" type="number"
+                                    class="form-control my-2 col mx-2" id="exampleInputEmail1" placeholder=" MRP">
+                                <input formControlName="sellprice" style="border-radius: 0px;" type="number"
+                                    class="form-control my-2 col mx-2" id="exampleInputPassword1"
+                                    placeholder="Sell Price">
+                            </div>
+                            <div class="form-group row gx-1">
+
+
+                                <input formControlName="discount" style="border-radius: 0px;" type="number"
+                                    class="form-control my-2 col mx-2" id="exampleInputEmail1"
+                                    placeholder=" Discount in %">
+                               
+
+
+                                <div class="input-group form-group border p-1 row gx-1 ">
+                                    <div class="input-group-prepend row">
+                                            <div class="col-3 btn btn-white mx-1 " >InStocks </div>
+                                        <div class="input-group-text col-3 mx-2 ">
+
+                                            <label class="form-check-label">
+                                                <input formControlName="sstatus" value="yes" type="radio" class="form-check-input" > &nbsp; Yes
+                                            </label>
+                                        </div>&nbsp;
+
+                                        <div class="input-group-text col-3">
+                                            <label class="form-check-label">
+                                                <input formControlName="sstatus" value="no" type="radio" class="form-check-input" >&nbsp;No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="input-group mb-3 form-control my-2 col mx-2 ">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text mx-1" for="inputGroupSelect01">Category</label>
+                                </div>
+                                <select formControlName="category" class="custom-select form-control  " id="inputGroupSelect01">
+                                    <option selected>Choose...</option>
+                                    <option value="Almonds">Almonds</option>
+                                    <option value="Pistachios">Pistachios</option>
+                                    <option value="Cashews">Cashews</option>
+                                    <option value="Dates">Dates</option>
+                                    <option value="Walnuts">Walnuts</option>
+                                    <option value="Brazil Nuts">Brazil Nuts</option>
+                                    <option value="Hazelnuts">Hazelnuts</option>
+                                    <option value="Apricots">Apricots</option>
+                                    <option value="Raisins">Raisins</option>
+                                    <option value="Prunes">Prunes</option>
+                                    <option value="Black Currant">Black Currant</option>
+                                    <option value="Figs">Figs</option>
+                                    <option value="Goji Berries">Goji Berries</option>
+                                </select>
+                            </div>
+                            <div class="form-group row gx-1">
+                                <textarea formControlName="desc" style="border-radius: 0px;" type="textarea"
+                                    class="form-control my-2 col mx-2" id="exampleInputEmail1"
+                                    placeholder="Description"></textarea>
+                            </div>
+
+
+                            <div class="form-group row gx-1 ">
+                                <span> Product Image </span>
+                                <input  (change)="selectImage($event)" style="border-radius: 0px;" type="file" class="form-control my-2 col mx-2" id="exampleInputEmail1"  placeholder=" Upload Product Image">
+                              </div>   
+                            <div>
+                                <button class="btn btn-warning mx-4 my-2" (click)="onProdAdd()"
+                                    style="color: white;"><b>SAVE</b></button>
+                                <button class="btn border" aria-label="Close" (click)="modalRef?.hide()">CANCEL</button>
+                            </div>
+                        </form>
+                    </div>
+                </ng-template>
+                    <div class="container">
+                        <table class="table text-center table-sm table-striped table-bordered  table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" >#</th>
+                                    <th class="text-center" > Product Id</th>
+                                    <th class="text-center">Image</th>
+                                    <th class="text-center">Title</th>
+                                    <th class="text-center">Description</th>
+                                    <th class="text-center">Category</th>
+                                    <th class="text-center">MRP</th>
+                                    <th class="text-center">Sell Price </th>
+                                    <th class="text-center">Discount</th>
+                                    <th class="text-center">InStocks</th>
+                                    <th class="text-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let product of Products index as i">
+                                    <td scope="row">{{i+1}}</td>
+        
+                                    <td><small>{{product._id}}</small ></td> 
+                                    <td><img style="height: 30px;  width: 40px;" src="../../../../assets/almonds/mamra.png"                                       alt=""> </td>
+                                    <td>{{product.name}}</td>
+                                   
+                                        <td class="col-2 text-truncate text-small" style="max-width: 200px;"> {{product.desc}}</td>
+                                        <td>{{product.category}}</td>
+        
+                                    <td>{{product.mrp}}</td>
+                                    <td>{{product.sellprice}}</td>
+                                  
+                                    <td>{{product.discount}}</td>
+                                    <td>{{product.sstatus}}</td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <button (click)="deleteprodbyId(product._id)"
+                                                class="ms-1 btn btn-sm  btn-danger">DELETE</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+               
+            </div>
+
+            <!-- <backend-popup-product [editingProduct]="editingProduct" (onSubmitProduct)="getProducts()"></backend-popup-product> -->
+        </div>

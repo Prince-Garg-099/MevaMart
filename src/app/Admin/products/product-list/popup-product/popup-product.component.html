@@ -1,0 +1,109 @@
+<div class="modal fade in" id="AddProductModal">
+    <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Product By category
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <!-- <form [formGroup]="productForm" (ngSubmit)="submitProduct()"> -->
+                                <form >
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input class="form-control" formControlName="title">
+                                        <!-- <ng-container *ngIf="productForm.get('title')?.touched || productFormSubmited">
+                                            <small class="form-text text-danger" 
+                                                *ngFor="let errorMsg of productForm.controls['title'].errors | keyvalue">
+                                                {{help.errorToString("Product title", errorMsg.key, errorMsg.value)}}
+                                            </small>
+                                        </ng-container> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Brands</label>
+                                        <!-- <ng-select formControlName="brand_id" placeholder="select">
+                                            <ng-option  value="">Select Brand</ng-option>
+                                            <ng-option *ngFor="let brand of brands" [value]="brand._id">{{brand.title}}</ng-option>
+                                         </ng-select>
+                                         <ng-container *ngIf="productForm.get('brand_id')?.touched || productFormSubmited">
+                                            <small class="form-text text-danger" 
+                                                *ngFor="let errorMsg of productForm.controls['brand_id'].errors | keyvalue">
+                                                {{help.errorToString("Brands", errorMsg.key, errorMsg.value)}}
+                                            </small>
+                                        </ng-container> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Category1</label>
+                                        <!-- <ng-select formControlName="cat1_id" placeholder="select">
+                                            <ng-option  value="">Select Category1</ng-option>
+                                            <ng-option *ngFor="let category of categories" [value]="category.cat1_id">{{category.title}}</ng-option>
+                                         </ng-select>
+                                         <ng-container *ngIf="productForm.get('cat1_id')?.touched || productFormSubmited">
+                                            <small class="form-text text-danger" 
+                                                *ngFor="let errorMsg of productForm.controls['cat1_id'].errors | keyvalue">
+                                                {{help.errorToString("Category1", errorMsg.key, errorMsg.value)}}
+                                            </small>
+                                        </ng-container> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Category2</label>
+                                        <!-- <ng-select formControlName="cat2_id" placeholder="select">
+                                            <ng-option  value="">Select Category2</ng-option>
+                                            <ng-container *ngFor="let category1 of categories | filterByImpure : ['cat1_id'] : productForm.controls['cat1_id'].value">
+                                                <ng-option *ngFor="let category of category1.cat2" 
+                                                    [value]="category.cat2_id">{{category.title}}
+                                                </ng-option>
+                                            </ng-container>
+                                        </ng-select> -->
+                                        <!-- <ng-container *ngIf="productForm.get('cat2_id')?.touched || productFormSubmited">
+                                            <small class="form-text text-danger" 
+                                                *ngFor="let errorMsg of productForm.controls['cat2_id'].errors | keyvalue">
+                                                {{help.errorToString("Category2", errorMsg.key, errorMsg.value)}}
+                                            </small>
+                                        </ng-container> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Category3</label>
+                                        <ng-select formControlName="cat3_id" placeholder="select">
+                                            <!-- <ng-option  value="">Select Category3</ng-option>
+                                            <ng-container *ngFor="let category1 of categories | filterByImpure : ['cat1_id'] : productForm.controls['cat1_id'].value">
+                                            <ng-container *ngFor="let category2 of category1.cat2 | filterByImpure : ['cat2_id'] : productForm.controls['cat2_id'].value">
+                                                <ng-option *ngFor="let category of category2.cat3" 
+                                                    [value]="category.cat3_id">{{category.title}}
+                                                </ng-option>
+                                            </ng-container>
+                                            </ng-container> -->
+                                        </ng-select>
+                                        <!-- <ng-container *ngIf="productForm.get('cat3_id')?.touched || productFormSubmited">
+                                            <small class="form-text text-danger" 
+                                                *ngFor="let errorMsg of productForm.controls['cat3_id'].errors | keyvalue">
+                                                {{help.errorToString("Category3", errorMsg.key, errorMsg.value)}}
+                                            </small>
+                                        </ng-container> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Popularity</label>
+                                        <input class="form-control" formControlName="popularity">
+                                        <!-- <ng-container *ngIf="productForm.get('popularity')?.touched || productFormSubmited">
+                                            <small class="form-text text-danger" 
+                                                *ngFor="let errorMsg of productForm.controls['popularity'].errors | keyvalue">
+                                                {{help.errorToString("Popularity", errorMsg.key, errorMsg.value)}}
+                                            </small>
+                                        </ng-container> -->
+                                    </div>
+                                    
+                                    <button class="btn btn-primary" type="submit">OK</button>
+                                    <button class="btn btn-warning" type="button" data-dismiss="modal">Cancel</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
