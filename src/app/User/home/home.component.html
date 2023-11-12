@@ -65,7 +65,7 @@
 </div> -->
 
 
-<div class="row   col-12">
+<!-- <div class="row   col-12">
   <div class="card mt-3 ms-1" *ngFor="let product of Products" style="width: 18rem;  ">
     <img class="card-img-top" style="width:270px; height: 270px; padding:7px; " src="../../../assets/almonds/M eva Mart.png" alt="Card image cap">
     <div class="card-body">
@@ -75,6 +75,45 @@
       style="margin-left: 40px; color: rgb(0, 0, 0); font-style: italic; font-weight:600;" id="clickadd"
       class="btn btn-warning me-2 "><i style="  font-size: 20px;" class="fa fa-shopping-cart"></i> Add to
       Cart</button>    </div>
+  </div>
+</div> -->
+
+<!-- <div class="card" style="width: 18rem;">
+  <img src="path/to/your/image.jpg" class="card-img-top" alt="Product Image">
+  <div class="card-body">
+    <h5 class="card-title">Product Title</h5>
+    <p class="card-text">Product Description goes here.</p>
+    <a href="#" class="btn btn-primary" (click)="addCart(product)">Add to Cart</a>
+  </div>
+</div> -->
+
+<!-- <div class="card mb-3" style="max-width: 18rem;" *ngFor="let product of Products" >
+
+  <img src="../../../assets/almonds/M eva Mart.png" class="card-img-top" alt="Product Image">
+  <div class="card-body">
+    <h5 class="card-title">Product Title</h5>
+    <p class="card-text">Product Description goes here.</p>
+    <a href="#" class="btn btn-primary" (click)="addCart(product)">Add to Cart</a>
+  </div>
+</div> -->
+<div class="container">
+  <div class="row">
+    <div  *ngFor="let product of Products"  class="col-sm-6 col-md-4 col-lg-3 mb-4">
+      <div class="card"    style="width: 100%;">
+        <img src="../../../assets/almonds/M eva Mart.png" class="card-img-top" alt="Product Image">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <!-- <p class="card-text d-inline-block text-truncate">{{product.desc}}</p> -->
+          <p class="card-text d-inline-block text-truncate" style="max-width: 250px;" >{{product.desc}}</p>
+          <span style="margin-left: 20px;font-size: 25px; "><b>₹ {{product.sellprice}} </b></span>
+          <i class="fa fa-star ms-1 "></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+            class="fa fa-star"></i><i class="fa fa-star me-1 "></i>
+            <button (click)="addCart(product)"
+            style="margin-left: 60px; color: rgb(0, 0, 0); font-style: italic; font-weight:600;" id="clickadd"
+            class="btn btn-warning me-2 "><i style="  font-size: 20px;" class="fa fa-shopping-cart"></i> Add to
+            Cart</button>    
+      </div>
+    </div>
   </div>
 </div>
 <!-- Footer -->
