@@ -21,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './Admin/products/products.component';
 import { OrdersComponent } from './Admin/orders/orders.component';
 import { CustomersComponent } from './Admin/customers/customers.component';
-import { DeshboardComponent } from './Admin/deshboard/deshboard.component';
+import { DeshboardComponent } from './Admin/dashboard/deshboard.component';
 import { ProductListComponent } from './Admin/products/product-list/product-list.component';
 import { VarientListComponent } from './Admin/products/varient-list/varient-list.component';
 import { PopupOrderedProductsComponent } from './Admin/orders/popup-ordered-products/popup-ordered-products.component';

@@ -7,13 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class AdminService {
   constructor(private _http:HttpClient) { }
-  backendhost='http://localhost:3000';
-  myorders='http://localhost:3000/myorders';
-  users='http://localhost:3000/allusers';
-  product='http://localhost:3000/product';
-  setstatus='http://localhost:3000/set_status';
-  cancelorder='http://localhost:3000/cancelorder';
-  totalorder='http://localhost:3000/orders';
+  backendhost='https://mevamart-server.onrender.com';
+  myorders='https://mevamart-server.onrender.com/myorders';
+  users='https://mevamart-server.onrender.com/allusers';
+  product='https://mevamart-server.onrender.com/product';
+  setstatus='https://mevamart-server.onrender.com/set_status';
+  cancelorder='https://mevamart-server.onrender.com/cancelorder';
+  totalorder='https://mevamart-server.onrender.com/orders';
 
   getprodData():Observable<any>{
     return this._http.get(`${this.product}`)

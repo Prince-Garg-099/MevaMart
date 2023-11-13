@@ -12,7 +12,7 @@ import { WishlistComponent } from './User/wishlist/wishlist.component';
 import { TrackingComponent } from './User/tracking/tracking.component';
 import { SigninComponent } from './User/signin/signin.component';
 import { SignupComponent } from './User/signup/signup.component';
-import { DeshboardComponent } from './Admin/deshboard/deshboard.component';
+import { DeshboardComponent } from './Admin/dashboard/deshboard.component';
 import { OrdersComponent } from './Admin/orders/orders.component';
 import { ProductsComponent } from './Admin/products/products.component';
 import { ProductListComponent } from './Admin/products/product-list/product-list.component';

@@ -18,19 +18,19 @@ export class UserserviceService {
   get nativeWindow(): any {
     return _window();
   }
-  Domain = "https://mevamart.onrender.com/";
-Url = 'http://localhost:3000';
-backendhost='http://localhost:3000/';
-myorder='http://localhost:3000/myorder';
-myorders='http://localhost:3000/myorders';
-users='http://localhost:3000/users';
-products='http://localhost:3000/product';
-setstatus='http://localhost:3000/set_status';
-cancelorder='http://localhost:3000/cancelorder';
-totalorder='http://localhost:3000/orders';
-orderidUrl = 'http://localhost:3000/orderid';
-apiUrl = 'http://localhost:3000/order';
-searchproducts='http://localhost:3000/searchprod';
+  Domain = "https://mevamart-server.onrender.com/";
+Url = 'https://mevamart-server.onrender.com';
+backendhost='https://mevamart-server.onrender.com/';
+myorder='https://mevamart-server.onrender.com/myorder';
+myorders='https://mevamart-server.onrender.com/myorders';
+users='https://mevamart-server.onrender.com/users';
+products='https://mevamart-server.onrender.com/product';
+setstatus='https://mevamart-server.onrender.com/set_status';
+cancelorder='https://mevamart-server.onrender.com/cancelorder';
+totalorder='https://mevamart-server.onrender.com/orders';
+orderidUrl = 'https://mevamart-server.onrender.com/orderid';
+apiUrl = 'https://mevamart-server.onrender.com/order';
+searchproducts='https://mevamart-server.onrender.com/searchprod';
 
 usersignup( userFormdata:any ): Observable<any> {
 return this._http.post<any>(`${this.Url}/signup`, userFormdata);
