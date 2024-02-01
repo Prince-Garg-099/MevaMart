@@ -17,7 +17,6 @@ import { OrdersComponent } from './Admin/orders/orders.component';
 import { ProductsComponent } from './Admin/products/products.component';
 import { ProductListComponent } from './Admin/products/product-list/product-list.component';
 import { CustomersComponent } from './Admin/customers/customers.component';
-import { SearchComponent } from './User/search/search.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent,  },
@@ -36,7 +35,6 @@ const routes: Routes = [
   { path: 'admin/productlist', component: ProductListComponent },
   { path: 'admin/customers', component: CustomersComponent },
   { path: 'admin/checkout', component: CheckoutComponent },
-  { path: 'search/:query', component: SearchComponent },
 
 ];
 

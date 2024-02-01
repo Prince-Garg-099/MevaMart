@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductviewComponent } from './User/productview/productview.component';
+
+
 import { CartComponent } from './User/cart/cart.component';
 import { CheckoutComponent } from './User/checkout/checkout.component';
 import { HomeComponent } from './User/home/home.component';
@@ -31,7 +33,6 @@ import { AdminService } from './Admin/services/admin.service';
 import { BsModalService, ModalModule, } from 'ngx-modal-bootstrap';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SearchComponent } from './User/search/search.component';
 
 
 
@@ -66,7 +67,6 @@ import { SearchComponent } from './User/search/search.component';
     PopupProductComponent,
     PopupVarientComponent,
     OrdersComponent,
-    SearchComponent
   ],
   imports: [
     CollapseModule.forRoot(),

@@ -40,7 +40,8 @@ export class OrdersComponent implements OnInit {
 
   getdelAdd(){
     this.service.getdelAdd().subscribe((res)=>{
-    this.Orders = res; 
+    this.Orders = res;
+    console.log(this.Orders) 
     console.log(this.Orders[0].products.length);
     this.Totalorder =this.Orders.length         
     });

@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { UserserviceService } from '../services/userservice.service';
-import { NavbarComponent } from '../navbar/navbar.component';
+import { Component, Input, OnInit } from '@angular/core';
+import { UserserviceService } from '../services/user.service';
 
 
 @Component({
@@ -19,28 +18,39 @@ export class HomeComponent implements OnInit {
   details: any;
   gdetails: any;
   Products: any;
+  AllProducts: any;
+  filteredProducts: any;
   ngOnInit(): void {
      this.getproddata();
      this.cartItemfunc();
 
   }
 
+  searchTerm: string = '';
 
+  onSearchInput(term: string): void {
+    this.searchTerm = term;
+    console.log(this.searchTerm);
+    this.Products = this.AllProducts.filter(
+      (      product: { name: string; }) => product?.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );    
+  }
 
   getproddata(){
     this.userservice.getprodData().subscribe((res)=>{
       console.log(res)
       this.Products = res; 
-     console.log(this.Products)})}
+      this.AllProducts = res; 
+     console.log(this.AllProducts)})}
   addCart(category:any){
+    // this.toast.success('Hello world!', 'Toastr fun!');
 
     let cartDataNull = localStorage.getItem("localCart")
     if(cartDataNull==null){
       let storeDataget:any = [];
       storeDataget.push(category);
       localStorage.setItem('localCart', JSON.stringify(storeDataget));
-      alert(' Successfully Added to your cart',);
-      
+// \      
     }else{
       var id =category._id;
       let index:number = -1;

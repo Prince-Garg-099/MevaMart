@@ -5,7 +5,8 @@
     border-radius: 50%;
   }
 
-  
   .badge{
+    border-radius: 13px;
     padding: 3px;
+  
   }

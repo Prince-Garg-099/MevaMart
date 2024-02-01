@@ -32,16 +32,17 @@
       </ul>
 
       <div class="d-flex align-items-center">
-        <a class="nav-link mt-1 me-3" routerLink="/cart">
-          <i class="fa fa-shopping-basket fa-lg"></i>
-          <span *ngIf="this.userservice.cartCount > 0"
-            class="badge bg-danger">{{this.userservice.cartCount}}</span>
-        </a>
+      <!-- Use Angular's ngIf with a template expression directly in the class attribute -->
+<a class="nav-link mt-1 me-3" routerLink="/cart">
+  <i class="fa fa-shopping-basket fa-lg"></i>
+  <span *ngIf="userservice.cartCount > 0" class="badge bg-danger">{{ userservice.cartCount }}</span>
+</a>
+
 
         <form class="d-flex" role="search">
-          <input class="form-control me-2" #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()"
-            type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-dark" routerLink="/search" (click)="submitSearch(searchInput.value)"
+          <input class="form-control me-2" #searchInput (keyup)="onSearchInput($event)" 
+          type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-dark" routerLink="/search" 
             type="submit">
             <i class="fa fa-search" aria-hidden="true"></i>
           </button>

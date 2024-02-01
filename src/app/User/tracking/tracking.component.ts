@@ -17,7 +17,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AdminService } from 'src/app/Admin/services/admin.service';
-import { UserserviceService } from '../services/userservice.service';
+import { UserserviceService } from '../services/user.service';
 
 @Component({
   selector: 'app-tracking',
