@@ -18,7 +18,7 @@ export class UserserviceService {
   get nativeWindow(): any {
     return _window();
   }
-  baseUrl = "https://mevamart-server.onrender.com/";
+  baseUrl = "https://mevamart-server.onrender.com";
   // baseUrl = "http://localhost:3000";
 
   usersignup(userFormdata: any): Observable<any> {
