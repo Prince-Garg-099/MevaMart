@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { HomeComponent } from '../home/home.component';
-import { UserserviceService } from '../services/user.service';
+import { Userservice } from '../services/user.service';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -11,7 +11,7 @@ import { NgIf } from '@angular/common';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router: Router, public userservice: UserserviceService, private route: Router) { }
+  constructor(private router: Router, public userservice: Userservice, private route: Router) { }
   user_id = (localStorage.getItem('userId') || "");
   user_name = (localStorage.getItem('username') || "");
 

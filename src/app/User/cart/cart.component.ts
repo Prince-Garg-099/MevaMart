@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminService } from 'src/app/Admin/services/admin.service';
-import { UserserviceService } from '../services/user.service';
+import { Userservice } from '../services/user.service';
 
 
 @Component({
@@ -12,7 +11,7 @@ export class CartComponent implements OnInit {
   totalmrp: any;
   totalsave: any;
 
-  constructor( public adminservice: AdminService,private userservice:UserserviceService) { }
+  constructor(private userservice:Userservice) { }
 
   ngOnInit(): void {
   

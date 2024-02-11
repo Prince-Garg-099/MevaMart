@@ -15,12 +15,24 @@
                 <form [formGroup]="userForm" class="mx-1 mx-md-4">
 
                   <div class="d-flex flex-row align-items-center mb-4 ">
-                    <i class="fa fa-envelope fa-lg me-3 fa-fw"></i>
+                    <i class="fa fa-user-circle fa-lg me-3 fa-fw"></i>
                     <div class="form-outline form-group flex-fill mb-0">
-                      <input formControlName="name" type="name" id="name" placeholder="Your Name"
+                      <input formControlName="firstName" type="name" id="firstName" placeholder="First Name"
                         class="form-control" />
-                      <span class="form-text text-danger" *ngIf="f.name.invalid && f.name.touched" style="color:red">
-                        *Field is required
+                      <span class="form-text text-danger" *ngIf="f.firstName.invalid && f.firstName.touched" style="color:red">
+                        *firstName is required
+
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4 ">
+                    <i class="fa fa-user-circle fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline form-group flex-fill mb-0">
+                      <input formControlName="lastName" type="name" id="lastName" placeholder="Last Name"
+                        class="form-control" />
+                      <span class="form-text text-danger" *ngIf="f.lastName.invalid && f.lastName.touched" style="color:red">
+                        *lastName is required
 
                       </span>
                     </div>
@@ -29,9 +41,9 @@
                   <div class="d-flex flex-row align-items-center mb-4 ">
                     <i class="fa fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline form-group flex-fill mb-0">
-                      <input formControlName="email" type="email" id="email" placeholder="Email Address"
+                      <input formControlName="emailAddress" type="email" id="emailAddress" placeholder="Email Address"
                         class="form-control" />
-                      <span class="form-text text-danger" *ngIf="f.email.invalid && f.email.touched"
+                      <span class="form-text text-danger" *ngIf="f.emailAddress.invalid && f.emailAddress.touched"
                         style="color:red">*Please provide a valid email address
                       </span>
                     </div>
@@ -42,7 +54,7 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fa fa-lock fa-lg me-3 fa-fw"></i>
                     <div class="form-outline form-group flex-fill mb-0">
-                      <input formControlName="password" #pw type="password" id="password" placeholder="password"
+                      <input formControlName="password" #pw type="password" id="password" placeholder="Password"
                         class="form-control" />
                       <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)"
                         class="form-text text-danger">
@@ -60,26 +72,7 @@
                     </div>
                   </div>
 
-                  <div class="d-flex flex-row align-items-center mb-4 ">
-                    <i class="fa fa-key fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline form-group flex-fill mb-0">
-                      <input formControlName="repassword" type="password" id="repassword" class="form-control"
-                        [ngClass]='confirmPasswordClass' formControlName="confirmpassword" #cpw
-                        (keyup)='checkPasswords(pw.value, cpw.value)' placeholder="confirm your password" />
 
-                    </div>
-                  </div>
-
-
-
-                  <div class="form-check d-flex form-group d-flex justify-content-center mb-3">
-                    <input formControlName="checkbox" class="form-check-input cb me-2" type="checkbox" value=""
-                      id="form2Example3c" />
-                    <span class="form-text text-danger" *ngIf=" f.checkbox.invalid" style="color:red">*Please tick to
-                      agree all the <a href="">terms of service </a> </span>
-                    <span class="form-text " *ngIf=" f.checkbox.valid" style="color:green"> I agree all the terms of
-                      service ✅ </span>
-                  </div>
                   <div class="d-flex   justify-content-center mx-4 ">
                     <button type="button" (click)="usersignup()"
                       class="btn design btn-primary  btn-lg">Register</button>

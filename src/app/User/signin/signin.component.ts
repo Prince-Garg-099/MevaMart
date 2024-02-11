@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { UserserviceService } from '../services/user.service';
+import { Userservice } from '../services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,16 +10,16 @@ import { Router } from '@angular/router';
 })
 export class SigninComponent implements OnInit {
 
-  constructor(private loginservice: UserserviceService,private fb :FormBuilder,private router:Router) { }
+  constructor(private userService: Userservice, private fb: FormBuilder, private router: Router) { }
   submitted = false;
-    
+
   passwordsMatching = false;
   isConfirmPasswordDirty = false;
   confirmPasswordClass = 'form-control'
 
- loginForm = this.fb.group({
+  loginForm = this.fb.group({
 
-    'email': ['', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+    'emailAddress': ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
 
     'password': new FormControl(null, [
       (c: AbstractControl) => Validators.required(c),
@@ -34,29 +34,29 @@ export class SigninComponent implements OnInit {
 
   loginUser() {
     {
-    if(this.loginForm.valid){
-      this.loginservice.finduser(this.loginForm.value).subscribe(
+      if (this.loginForm.valid) {
+        this.userService.finduser(this.loginForm.value).subscribe(
 
-        (        res: any) =>{
+          (res: any) => {
+            if (res.success) {
+              console.log(res.message)
+              this.router.navigate(['/'])
+              localStorage.setItem('userId', res.user._id)
+              localStorage.setItem('token', res.token)
+              localStorage.setItem('useremail', res.user.emailAddress)
+              localStorage.setItem('username', res.user.firstName)
+            } else {
+              alert(res.error)
+            }
+          },
+        );
+      }
 
-          localStorage.setItem('userId',res._id)
-          localStorage.setItem('useremail',res.email)
-          localStorage.setItem('username',res.name)
-          this.router.navigate(['/'])
-          console.log(" Login Successfully ")
-
-        },
-        (        err: any)=>{
-            alert(err.message)
-        }
-      );
     }
-  
-     }}
+  }
   ngOnInit(): void {
   }
-  get f()
-  {
-      return this.loginForm.controls;
+  get f() {
+    return this.loginForm.controls;
   }
 }

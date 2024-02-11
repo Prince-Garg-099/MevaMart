@@ -12,11 +12,6 @@ import { WishlistComponent } from './User/wishlist/wishlist.component';
 import { TrackingComponent } from './User/tracking/tracking.component';
 import { SigninComponent } from './User/signin/signin.component';
 import { SignupComponent } from './User/signup/signup.component';
-import { DeshboardComponent } from './Admin/dashboard/deshboard.component';
-import { OrdersComponent } from './Admin/orders/orders.component';
-import { ProductsComponent } from './Admin/products/products.component';
-import { ProductListComponent } from './Admin/products/product-list/product-list.component';
-import { CustomersComponent } from './Admin/customers/customers.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent,  },
@@ -28,13 +23,8 @@ const routes: Routes = [
   { path: 'myorders', component: UserordersComponent },
   { path: 'wishlist', component: WishlistComponent },
   { path: 'tracking/:orderid', component: TrackingComponent },
-  { path: 'signin', component: SigninComponent },
+  { path: 'login', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'admin', component: DeshboardComponent },
-  { path: 'admin/orders', component: OrdersComponent },
-  { path: 'admin/productlist', component: ProductListComponent },
-  { path: 'admin/customers', component: CustomersComponent },
-  { path: 'admin/checkout', component: CheckoutComponent },
 
 ];
 

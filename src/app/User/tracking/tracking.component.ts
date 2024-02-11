@@ -16,8 +16,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AdminService } from 'src/app/Admin/services/admin.service';
-import { UserserviceService } from '../services/user.service';
+import { Userservice } from '../services/user.service';
 
 @Component({
   selector: 'app-tracking',
@@ -29,7 +28,7 @@ export class TrackingComponent implements OnInit {
   getParamorderid: any;
   Orders: any;
 
-  constructor(public adminservice: AdminService, private service: UserserviceService, private router: ActivatedRoute) { }
+  constructor(private service: Userservice, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getParamorderid = this.router.snapshot.paramMap.get('orderid');

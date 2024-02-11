@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserserviceService } from '../services/user.service';
+import { Userservice } from '../services/user.service';
 import { AbstractControl, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class UserprofileComponent implements OnInit {
 
-  constructor(private userservice: UserserviceService,private fb :FormBuilder,private router:Router) { }
+  constructor(private userservice: Userservice,private fb :FormBuilder,private router:Router) { }
 
   username :any="";
   useremail :any="";

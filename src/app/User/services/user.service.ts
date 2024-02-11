@@ -10,7 +10,7 @@ function _window(): any {
   providedIn: 'root'
 })
 
-export class UserserviceService {
+export class Userservice {
 
   constructor(private _http: HttpClient) { }
 
@@ -18,11 +18,11 @@ export class UserserviceService {
   get nativeWindow(): any {
     return _window();
   }
-  baseUrl = "https://mevamart-server.onrender.com";
-  // baseUrl = "http://localhost:3000";
+  // baseUrl = "https://mevamart-server.onrender.com";
+  baseUrl = "http://localhost:3000/user";
 
   usersignup(userFormdata: any): Observable<any> {
-    return this._http.post<any>(`${this.baseUrl}/signup`, userFormdata);
+    return this._http.post<any>(`${this.baseUrl}/register`, userFormdata);
   }
 
 
@@ -31,7 +31,8 @@ export class UserserviceService {
   }
 
   finduser(loginFormdata: any) {
-    return this._http.post<any>(`${this.baseUrl}/signin`, loginFormdata);
+    console.log(loginFormdata);
+    return this._http.post<any>(`${this.baseUrl}/login`, loginFormdata);
   }
   finduserdata(id: any) {
     return this._http.get<any>(`${this.baseUrl}/${id}`);

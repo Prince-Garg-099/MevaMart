@@ -1,5 +1,5 @@
 import { FormBuilder } from "@angular/forms";
-import { UserserviceService } from "../services/user.service";
+import { Userservice } from "../services/user.service";
 import { Component, OnInit } from "@angular/core";
 @Component({
  selector: 'app-userorders',
@@ -12,7 +12,7 @@ import { Component, OnInit } from "@angular/core";
   Totalorder: any;
   today: any;
   dd: any;
-  constructor(public service: UserserviceService, private fb: FormBuilder) { }
+  constructor(public service: Userservice, private fb: FormBuilder) { }
 
   ngOnInit(): void {  
 

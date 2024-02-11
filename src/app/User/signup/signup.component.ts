@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserserviceService } from '../services/user.service';
+import { Userservice } from '../services/user.service';
 import { AbstractControl, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private userservice: UserserviceService,private fb :FormBuilder,private router:Router) { }
+  constructor(private userservice: Userservice,private fb :FormBuilder,private router:Router) { }
   submitted = false;
   
   passwordsMatching = false;
@@ -20,22 +20,16 @@ export class SignupComponent implements OnInit {
 
 
   userForm = this.fb.group({
-    'name': new FormControl('', Validators.required,),
-    'email': ['', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-    'contactno': new FormControl('',),
+    'firstName': new FormControl('', Validators.required,),
+    'lastName': new FormControl('', Validators.required,),
+    'emailAddress': ['', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+    // 'contactno': new FormControl('',),
     'password': new FormControl(null, [
       (c: AbstractControl) => Validators.required(c),
       Validators.pattern(
         /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/
       ),
     ]),
-    'confirmpassword': new FormControl(null, [
-      (c: AbstractControl) => Validators.required(c),
-      Validators.pattern(
-        /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/
-      ),
-    ]),
-    'checkbox': [false, Validators.requiredTrue],
 
   });
 
@@ -45,10 +39,14 @@ export class SignupComponent implements OnInit {
       console.log(this.userForm);
       this.userservice.usersignup(this.userForm.value).subscribe(
         res => {
-          this.router.navigate(['/'])
+          if(res.success){
+            alert(res.message);
+            this.router.navigate(['/'])
+          }else{
+            alert(res.error);
+          }
     
         },
-        err => alert(err.message)
       )
     }else{
       alert("invalid form");

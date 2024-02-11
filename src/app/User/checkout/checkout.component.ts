@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserserviceService } from '../services/user.service';
+import { Userservice } from '../services/user.service';
 
 
 
@@ -20,7 +20,7 @@ export class CheckoutComponent implements OnInit {
   options: any;
   total: any;
 
-  constructor(private service:UserserviceService,private fb: FormBuilder,private auth:UserserviceService) { }
+  constructor(private service:Userservice,private fb: FormBuilder,private auth:Userservice) { }
   isCollapsed = true;
   id:any
   ngOnInit(): void {
