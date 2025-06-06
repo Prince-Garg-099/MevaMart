@@ -68,11 +68,14 @@ export class CartComponent implements OnInit {
       this.getCartDetails = JSON.parse(localStorage.getItem('localCart') || "")
       this.userservice.cartCount = this.getCartDetails.length;
       this.total = this.getCartDetails.reduce(function (acc: any, val: any) {
-        return acc + ((val.mrp - val.discount*val.mrp/100)* val.qnt);
+        return acc + ((val.listingPrice - val.discount*val.listingPrice/100));
+        // return acc + ((val.listingPrice - val.discount*val.listingPrice/100)* val.qnt);
         
       }, 0)
       this.totalmrp = this.getCartDetails.reduce(function (acc: any, val: any) {
-        return acc + (val.mrp * val.qnt);
+        // return acc + (val.listingPrice * val.qnt);
+        return acc + (val.listingPrice );
+
       }, 0)
       this.totalsave = this.totalmrp - this.total
     }

@@ -37,7 +37,6 @@ export class HomeComponent implements OnInit {
       },
       (error:any) => {
         console.error('Error fetching product data:', error);
-        // Handle error (e.g., show error message to the user)
       }
     );
   }

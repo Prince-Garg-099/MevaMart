@@ -63,6 +63,12 @@ export class Userservice {
     return this._http.get(`${this.baseUrl + '/orderid'}/${id}`);
   }
 
+  sendOtp(email: string,reason:string): Observable<any> {
+    return this._http.post(`${this.baseUrl}/send-otp`, { email, reason });
+  }
+  verifyOtp(email: any, otp: any): Observable<any> {
+    return this._http.post(`${this.baseUrl}/verify-otp`, { email, otp });
+  }
 
 
   cartCount = 0;

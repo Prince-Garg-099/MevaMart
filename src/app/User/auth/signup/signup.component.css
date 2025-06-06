@@ -19,3 +19,24 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
     }
+
+    .text-success {
+        color: green;
+      }
+      
+      .text-danger {
+        color: red;
+      }
+      
+      li i.fa {
+        width: 16px;
+        margin-right: 8px;
+      }
+      ul.small li {
+        transition: color 0.2s ease;
+        margin-bottom: 4px;
+      }
+      ul.small li i {
+        width: 1rem;
+      }
+      

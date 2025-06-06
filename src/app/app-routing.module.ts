@@ -10,8 +10,8 @@ import { UserprofileComponent } from './User/userprofile/userprofile.component';
 import { UserordersComponent } from './User/userorders/userorders.component';
 import { WishlistComponent } from './User/wishlist/wishlist.component';
 import { TrackingComponent } from './User/tracking/tracking.component';
-import { SigninComponent } from './User/signin/signin.component';
-import { SignupComponent } from './User/signup/signup.component';
+import { SigninComponent } from './User/auth/signin/signin.component';
+import { SignupComponent } from './User/auth/signup/signup.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent,  },
